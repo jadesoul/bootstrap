@@ -5,5 +5,6 @@ mkdir "$BAK"
 mv .vimrc "$BAK"
 mv .vim "$BAK"
 cd -
-cp -R .vimrc .vim ~
+tar zxvf vim.tgz
+mv .vimrc .vim ~
 
