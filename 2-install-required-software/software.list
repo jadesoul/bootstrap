@@ -23,6 +23,7 @@ python-software-properties
 python-cjson
 python-simplejson
 python-mysqldb
+ipython
 mysql-server
 php5
 apache2
