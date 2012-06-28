@@ -1,0 +1,7 @@
+deb http://ubuntu.cn99.com/ubuntu/ oneiric main restricted universe multiverse
+deb http://ubuntu.cn99.com/ubuntu/ oneiric-updates main restricted universe multiverse
+deb http://ubuntu.cn99.com/ubuntu/ oneiric-security main restricted universe multiverse
+deb http://ubuntu.cn99.com/ubuntu/ oneiric-backports main restricted universe multiverse
+deb http://ubuntu.cn99.com/ubuntu-cn/ oneiric main restricted universe multiverse
+
+

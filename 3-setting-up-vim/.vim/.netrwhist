@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/root/git-projects/share/vim/vimrc/vimfiles/ftplugin'
+let g:netrw_dirhist_2='/root/git-projects/libjade/.git'
+let g:netrw_dirhist_3='/root/git-projects/libjade/.git/hooks'

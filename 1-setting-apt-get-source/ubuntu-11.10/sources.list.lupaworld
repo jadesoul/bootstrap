@@ -1,0 +1,8 @@
+deb http://mirror.lupaworld.com/ubuntu/archive/ oneiric main restricted universe multiverse
+deb http://mirror.lupaworld.com/ubuntu/archive/ oneiric-security main restricted universe multiverse
+deb http://mirror.lupaworld.com/ubuntu/archive/ oneiric-updates main restricted universe multiverse
+deb http://mirror.lupaworld.com/ubuntu/archive/ oneiric-backports main restricted universe multiverse
+deb http://mirror.lupaworld.com/ubuntu/ubuntu-cn/ oneiric main restricted universe multiverse
+
+
+
