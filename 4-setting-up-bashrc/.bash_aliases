@@ -12,7 +12,7 @@ alias l=ll
 alias pg='ps aux | grep '
 alias sl=ls
 
-alias gowork='cd /root/svn-projects/edusns_proj/edusns_swift'
+alias gowork='cd ~/svn-projects/edusns_proj/edusns_swift'
 alias startvnc='sudo x11vnc -forever -passwd jadelemon'
 alias chrome='/opt/google/chrome/google-chrome --user-data-dir=/opt/google/chrome/data/ &'
 alias jgrep="grep -rn5 --include='*.py' --exclude='*.log' --exclude-dir='swift'"
@@ -40,11 +40,11 @@ extract () {
    fi
  }
 
-alias golibjade='cd /root/svn-projects/black-widow/libspider/libjade'
+alias golibjade='cd ~/svn-projects/black-widow/libspider/libjade'
 
-alias server='cd /root/svn-projects/edusns_proj/edusns_swift; python start-server.py ; cd -'
-alias client='cd /root/svn-projects/edusns_proj/edusns_swift; python start-client.py; cd -'
-alias uploader='cd /root/svn-projects/edusns_proj/edusns_swift; python start-swift_upload_server.py ; cd -'
+alias server='cd ~/svn-projects/edusns_proj/edusns_swift; python start-server.py ; cd -'
+alias client='cd ~/svn-projects/edusns_proj/edusns_swift; python start-client.py; cd -'
+alias uploader='cd ~/svn-projects/edusns_proj/edusns_swift; python start-swift_upload_server.py ; cd -'
 
 alias apts='sudo apt-cache search'
 alias apti='sudo apt-get install'
