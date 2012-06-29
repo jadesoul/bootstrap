@@ -17,7 +17,7 @@ alias gowork='cd ~/svn-projects/edusns_proj/edusns_swift'
 alias startvnc='sudo x11vnc -forever -passwd jadelemon'
 alias chrome='/opt/google/chrome/google-chrome --user-data-dir=/opt/google/chrome/data/ &'
 alias jgrep="grep -rn5 --include='*.py' --exclude='*.log' --exclude-dir='swift'"
-alias govs2='ssh zdvs2'
+alias govs2='ssh root@zdvs2'
 
 extract () {
    if [ -f $1 ] ; then
