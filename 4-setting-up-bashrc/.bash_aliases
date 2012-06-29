@@ -1,3 +1,4 @@
+#!/bin/bash
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -49,4 +50,6 @@ alias uploader='cd ~/svn-projects/edusns_proj/edusns_swift; python start-swift_u
 alias apts='sudo apt-cache search'
 alias apti='sudo apt-get install'
 alias ga="git commit -a -m 'no message'"
+alias backupbashrc='cp .bash_aliases ~/git-projects/bootstrap/4-setting-up-bashrc/.bash_aliases'
+alias pushbootstrap='cd ~/git-projects/bootstrap ; ga ; git push ; cd -'
 
