@@ -7,7 +7,6 @@ alias q='exit'
 alias p='cd ..'
 alias c='clear'
 alias b='cd -'
-alias n=vi
 alias l=ll
 
 alias pg='ps aux | grep '
@@ -17,7 +16,7 @@ alias gowork='cd ~/svn-projects/edusns_proj/edusns_swift'
 alias startvnc='sudo x11vnc -forever -passwd jadelemon'
 alias chrome='/opt/google/chrome/google-chrome --user-data-dir=/opt/google/chrome/data/ &'
 alias jgrep="grep -rn5 --include='*.py' --exclude='*.log' --exclude-dir='swift'"
-alias govs2='ssh root@zdvs2'
+alias govs2='ssh zdvs2'
 
 extract () {
    if [ -f $1 ] ; then
@@ -50,7 +49,6 @@ alias uploader='cd ~/svn-projects/edusns_proj/edusns_swift; python start-swift_u
 alias apts='sudo apt-cache search'
 alias apti='sudo apt-get install'
 alias ga="git commit -a -m 'no message'"
-alias backupbashrc='cp .bash_aliases ~/git-projects/bootstrap/4-setting-up-bashrc/.bash_aliases'
+alias backupbashrc='cp ~/.bash_aliases ~/git-projects/bootstrap/4-setting-up-bashrc/.bash_aliases'
 alias pushbootstrap='cd ~/git-projects/bootstrap ; ga ; git push ; cd -'
-alias nmaplocalhost='nmap -v localhost'
 
