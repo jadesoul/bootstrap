@@ -52,4 +52,5 @@ alias apti='sudo apt-get install'
 alias ga="git commit -a -m 'no message'"
 alias backupbashrc='cp .bash_aliases ~/git-projects/bootstrap/4-setting-up-bashrc/.bash_aliases'
 alias pushbootstrap='cd ~/git-projects/bootstrap ; ga ; git push ; cd -'
+alias nmaplocalhost='nmap -v localhost'
 
