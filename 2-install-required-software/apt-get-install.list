@@ -26,6 +26,8 @@ python-mysqldb
 ipython
 mysql-server
 php5
+php5-mysql
+php5-mcrypt
 apache2
 libapache2-mod-php5
 libapache2-mod-python
