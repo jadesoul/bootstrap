@@ -40,15 +40,25 @@ extract () {
    fi
  }
 
-alias golibjade='cd ~/svn-projects/black-widow/libspider/libjade'
 
-alias server='cd ~/svn-projects/edusns_proj/edusns_swift; python start-server.py ; cd -'
-alias client='cd ~/svn-projects/edusns_proj/edusns_swift; python start-client.py; cd -'
-alias uploader='cd ~/svn-projects/edusns_proj/edusns_swift; python start-swift_upload_server.py ; cd -'
+alias server='cd ~/svn-projects/edusns_proj/edusns_swift; python start-server.py ; b'
+alias client='cd ~/svn-projects/edusns_proj/edusns_swift; python start-client.py; b'
+alias uploader='cd ~/svn-projects/edusns_proj/edusns_swift; python start-swift_upload_server.py ; b'
 
 alias apts='sudo apt-cache search'
 alias apti='sudo apt-get install'
 alias ga="git commit -a -m 'no message'"
+
 alias backupbashrc='cp ~/.bash_aliases ~/git-projects/bootstrap/4-setting-up-bashrc/.bash_aliases'
-alias pushbootstrap='cd ~/git-projects/bootstrap ; ga ; git push ; cd -'
+alias pushbootstrap='cd ~/git-projects/bootstrap ; ga ; git push ; b'
+
+alias installpythonpackage='python setup.py build; sudo python setup.py install'
+alias updatesvn='svn up'
+alias updateinstallpython='updatesvn; installpythonpackage'
+
+alias golibjade='cd /home/jadesoul/git-projects/libjade'
+alias installlibjade='golibjade; updateinstallpython; b'
+
+alias goblackwidow='cd /home/jadesoul/svn-projects/black-widow-local'
+alias installblackwidow='goblackwidow; updateinstallpython; b'
 
