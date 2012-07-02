@@ -62,3 +62,5 @@ alias installlibjade='golibjade; updateinstallpython; b'
 alias goblackwidow='cd /home/jadesoul/svn-projects/black-widow-local'
 alias installblackwidow='goblackwidow; updateinstallpython; b'
 
+alias testblackwidow='installblackwidow; cd /home/jadesoul/svn-projects/black-widow-local/tests/spiders ; python test.py'
+
