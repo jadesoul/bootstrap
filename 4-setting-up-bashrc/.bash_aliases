@@ -12,6 +12,7 @@ alias l=ll
 alias pg='ps aux | grep '
 alias sl=ls
 
+alias netspeed='sudo iptraf -g'
 alias gowork='cd ~/svn-projects/edusns_proj/edusns_swift'
 alias startvnc='sudo x11vnc -forever -passwd jadelemon'
 alias chrome='/opt/google/chrome/google-chrome --user-data-dir=/opt/google/chrome/data/ &'
