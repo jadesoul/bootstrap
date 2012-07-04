@@ -10,8 +10,6 @@ ftpd
 curl
 gcc
 g++
-g++-4.6
-g++-4.4
 libboost-dev
 libevent-dev
 libcv-dev

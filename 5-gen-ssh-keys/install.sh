@@ -1,1 +1,1 @@
-ssh-keygen -C `cat email`
+ssh-keygen
