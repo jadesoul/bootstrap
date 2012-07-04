@@ -1,0 +1,5 @@
+deb http://mirror.lupaworld.com/ubuntu/archive/ precise main restricted universe multiverse
+deb http://mirror.lupaworld.com/ubuntu/archive/ precise-security main restricted universe multiverse
+deb http://mirror.lupaworld.com/ubuntu/archive/ precise-updates main restricted universe multiverse
+deb http://mirror.lupaworld.com/ubuntu/archive/ precise-backports main restricted universe multiverse
+deb http://mirror.lupaworld.com/ubuntu/ubuntu-cn/ precise main restricted universe multiverse 

@@ -1,0 +1,7 @@
+#兰州大学
+deb ftp://mirror.lzu.edu.cn/ubuntu/ precise main multiverse restricted universe
+deb ftp://mirror.lzu.edu.cn/ubuntu/ precise-backports main multiverse restricted universe
+deb ftp://mirror.lzu.edu.cn/ubuntu/ precise-proposed main multiverse restricted universe
+deb ftp://mirror.lzu.edu.cn/ubuntu/ precise-security main multiverse restricted universe
+deb ftp://mirror.lzu.edu.cn/ubuntu/ precise-updates main multiverse restricted universe
+deb ftp://mirror.lzu.edu.cn/ubuntu-cn/ precise main multiverse restricted universe 
