@@ -43,7 +43,7 @@ extract () {
 
 alias golibjade='cd ~/svn-projects/black-widow/libspider/libjade'
 
-alias server='cd ~/svn-projects/edusns_proj/edusns_swift; python start-server.py ; cd -'
+alias server='cd ~/svn-projects/edusns_proj/edusns_swift; sudo python start-server.py ; cd -'
 alias client='cd ~/svn-projects/edusns_proj/edusns_swift; python start-client.py; cd -'
 alias uploader='cd ~/svn-projects/edusns_proj/edusns_swift; python start-swift_upload_server.py ; cd -'
 
