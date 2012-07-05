@@ -7,17 +7,17 @@ alias q='exit'
 alias p='cd ..'
 alias c='clear'
 alias b='cd -'
-alias n=vi
 alias l=ll
 
 alias pg='ps aux | grep '
 alias sl=ls
 
+alias netspeed='sudo iptraf -g'
 alias gowork='cd ~/svn-projects/edusns_proj/edusns_swift'
 alias startvnc='sudo x11vnc -forever -passwd jadelemon'
 alias chrome='/opt/google/chrome/google-chrome --user-data-dir=/opt/google/chrome/data/ &'
 alias jgrep="grep -rn5 --include='*.py' --exclude='*.log' --exclude-dir='swift'"
-alias govs2='ssh root@zdvs2'
+alias govs2='ssh zdvs2'
 
 extract () {
    if [ -f $1 ] ; then
@@ -41,16 +41,39 @@ extract () {
    fi
  }
 
-alias golibjade='cd ~/svn-projects/black-widow/libspider/libjade'
 
+<<<<<<< HEAD
 alias server='cd ~/svn-projects/edusns_proj/edusns_swift; sudo python start-server.py ; cd -'
 alias client='cd ~/svn-projects/edusns_proj/edusns_swift; python start-client.py; cd -'
 alias uploader='cd ~/svn-projects/edusns_proj/edusns_swift; python start-swift_upload_server.py ; cd -'
+=======
+alias server='cd ~/svn-projects/edusns_proj/edusns_swift; python start-server.py ; b'
+alias client='cd ~/svn-projects/edusns_proj/edusns_swift; python start-client.py; b'
+alias uploader='cd ~/svn-projects/edusns_proj/edusns_swift; python start-swift_upload_server.py ; b'
+>>>>>>> fc64f251c33842926d6252a7e15cdf393b534597
 
 alias apts='sudo apt-cache search'
 alias apti='sudo apt-get install'
 alias ga="git commit -a -m 'no message'"
-alias backupbashrc='cp .bash_aliases ~/git-projects/bootstrap/4-setting-up-bashrc/.bash_aliases'
-alias pushbootstrap='cd ~/git-projects/bootstrap ; ga ; git push ; cd -'
-alias nmaplocalhost='nmap -v localhost'
+
+alias backupbashrc='cp ~/.bash_aliases ~/git-projects/bootstrap/4-setting-up-bashrc/.bash_aliases'
+alias pushbootstrap='cd ~/git-projects/bootstrap ; ga ; git push ; b'
+
+alias installpythonpackage='python setup.py build; sudo python setup.py install'
+alias updatesvn='svn up'
+alias updateinstallpython='updatesvn; installpythonpackage'
+
+alias golibjade='cd /home/jadesoul/git-projects/libjade'
+alias installlibjade='golibjade; updateinstallpython; b'
+
+alias goblackwidow='cd /home/jadesoul/svn-projects/black-widow-local'
+alias installblackwidow='goblackwidow; updateinstallpython; b'
+
+alias testblackwidow='installblackwidow; cd /home/jadesoul/svn-projects/black-widow-local/tests/spiders ; python test.py'
+
+gitget () {
+	git clone git@github.com:jadesoul/$1.git
+}
+
+alias ng='netstat -anp | grep'
 
