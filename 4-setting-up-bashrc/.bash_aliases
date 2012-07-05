@@ -65,3 +65,9 @@ alias installblackwidow='goblackwidow; updateinstallpython; b'
 
 alias testblackwidow='installblackwidow; cd /home/jadesoul/svn-projects/black-widow-local/tests/spiders ; python test.py'
 
+gitget () {
+	git clone git@github.com:jadesoul/$1.git
+}
+
+alias ng='netstat -anp | grep'
+
