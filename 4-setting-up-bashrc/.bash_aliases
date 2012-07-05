@@ -42,15 +42,6 @@ extract () {
  }
 
 
-<<<<<<< HEAD
-alias server='cd ~/svn-projects/edusns_proj/edusns_swift; sudo python start-server.py ; cd -'
-alias client='cd ~/svn-projects/edusns_proj/edusns_swift; python start-client.py; cd -'
-alias uploader='cd ~/svn-projects/edusns_proj/edusns_swift; python start-swift_upload_server.py ; cd -'
-=======
-alias server='cd ~/svn-projects/edusns_proj/edusns_swift; python start-server.py ; b'
-alias client='cd ~/svn-projects/edusns_proj/edusns_swift; python start-client.py; b'
-alias uploader='cd ~/svn-projects/edusns_proj/edusns_swift; python start-swift_upload_server.py ; b'
->>>>>>> fc64f251c33842926d6252a7e15cdf393b534597
 
 alias apts='sudo apt-cache search'
 alias apti='sudo apt-get install'
@@ -76,4 +67,23 @@ gitget () {
 }
 
 alias ng='netstat -anp | grep'
+alias sqlite3='/home/zd/software/sqlite/sqlite-autoconf-3071300/sqlite3'
 
+export EDUSNS_SWIFT=~/svn-projects/edusns_proj/edusns_swift
+
+alias goswift='cd $EDUSNS_SWIFT'
+alias deployswift='goswift; bash deploy.sh; b'
+alias updateswift='goswift; bash update.sh; b'
+
+alias server='goswift; python start-server.py; b'
+alias debugserver='goswift; updateswift; server; b'
+
+alias client='goswift; python start-client.py; b'
+alias debugclient='goswift; for x in {1..100000}; do client; done; b'
+
+alias uploader='goswift; python start-swift_upload_server.py ; b'
+alias showtimewait='ng 9090'
+
+grepserverlog () {
+	grep -n5 "$1" $EDUSNS_SWIFT/server-v3.log
+}
