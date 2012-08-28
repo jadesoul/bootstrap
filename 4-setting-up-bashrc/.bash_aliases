@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # exports
-export GIT_ROOT=~/git-projects
-export SVN_ROOT=~/svn-projects
-export EDUSNS_SWIFT=~/svn-projects/edusns_proj/edusns_swift
+export ROOT=~
+export GIT_ROOT=$ROOT/git-projects
+export SVN_ROOT=$ROOT/svn-projects
+export EDUSNS_SWIFT=$SVN_ROOT/edusns_proj/edusns_swift
 
 
 # common utils
@@ -50,6 +51,7 @@ extract () {
 # tools for apt get
 alias apts='sudo apt-cache search'
 alias apti='sudo apt-get install'
+alias aptu='sudo apt-get update'
 
 # tools for python
 installpythonpackage () {
