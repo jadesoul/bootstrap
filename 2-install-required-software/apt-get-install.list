@@ -29,6 +29,7 @@ python-software-properties
 python-cjson
 python-simplejson
 python-mysqldb
+python-imaging #PIL
 ipython
 mysql-server
 php5
