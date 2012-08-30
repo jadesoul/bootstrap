@@ -1,3 +1,6 @@
 DBUtils
-Eventlet
+virtualenv
 WebOb
+Eventlet
+tox
+

@@ -1,10 +1,9 @@
 #!/bin/bash
 
 # exports
-export ROOT=~
-export GIT_ROOT=$ROOT/git-projects
-export SVN_ROOT=$ROOT/svn-projects
-export EDUSNS_SWIFT=$SVN_ROOT/edusns_proj/edusns_swift
+export GIT_ROOT=~/git-projects
+export SVN_ROOT=~/svn-projects
+export EDUSNS_SWIFT=~/svn-projects/edusns_proj/edusns_swift
 
 
 # common utils
@@ -33,14 +32,14 @@ extract () {
 		*.tar.gz)		tar xvzf $1 && cd $(basename "$1" .tar.gz) ;;
 		*.tar.xz)		tar Jxvf $1 && cd $(basename "$1" .tar.xz) ;;
 		*.bz2)		bunzip2 $1 && cd $(basename "$1" /bz2) ;;
-		*.rar)		unrar x $1 && cd $(basename "$1" .rar) ;;
-		*.gz)		gunzip $1 && cd $(basename "$1" .gz) ;;
-		*.tar)		tar xvf $1 && cd $(basename "$1" .tar) ;;
+		*.rar)			unrar x $1 && cd $(basename "$1" .rar) ;;
+		*.gz)			gunzip $1 && cd $(basename "$1" .gz) ;;
+		*.tar)			tar xvf $1 && cd $(basename "$1" .tar) ;;
 		*.tbz2)		tar xvjf $1 && cd $(basename "$1" .tbz2) ;;
 		*.tgz)		tar xvzf $1 && cd $(basename "$1" .tgz) ;;
 		*.zip)		unzip $1 && cd $(basename "$1" .zip) ;;
 		*.Z)			uncompress $1 && cd $(basename "$1" .Z) ;;
-		*.7z)		7z x $1 && cd $(basename "$1" .7z) ;;
+		*.7z)			7z x $1 && cd $(basename "$1" .7z) ;;
 		*)			echo "don't know how to extract '$1'..." ;;
 		esac
 	else
@@ -51,7 +50,6 @@ extract () {
 # tools for apt get
 alias apts='sudo apt-cache search'
 alias apti='sudo apt-get install'
-alias aptu='sudo apt-get update'
 
 # tools for python
 installpythonpackage () {

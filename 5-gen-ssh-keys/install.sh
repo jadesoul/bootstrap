@@ -1,1 +1,1 @@
-ssh-keygen -t rsa
+ssh-keygen
