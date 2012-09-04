@@ -13,6 +13,8 @@ ftpd
 curl
 gcc
 g++
+autoconf
+libtool
 libboost-dev
 libevent-dev
 libcv-dev
@@ -38,6 +40,19 @@ php5-mcrypt
 apache2
 libapache2-mod-php5
 libapache2-mod-python
+db-util
+libsasl2-dev
+libssl-dev
+openssl
+libzzip-dev
+libsqlite3-dev
+libapr1-dev
+libaprutil1-dev
+libserf-dev
+libmagic-dev
+python-qt4
+python-qt4-dev
+python-qt4-doc
 
 #below are for graphical systems
 #scite

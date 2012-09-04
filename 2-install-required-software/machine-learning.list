@@ -1,0 +1,17 @@
+complearn-tools #- complearn machine-learning command-line utilities
+libcomplearn-dev #- machine-learning through data compression development files
+libcomplearn1 #- machine-learning with data compression core library runtime files
+libcomplearn1-headers #- machine-learning through data compression header files
+librdkit-dev #- Collection of cheminformatics and machine-learning software (development files)
+librdkit1 #- Collection of cheminformatics and machine-learning software (shared libraries)
+libtorch3-dev #- State of the art machine learning library - development files
+libtorch3c2 #- State of the art machine learning library - runtime library
+libzinnia0 #- online handwriting recognition system with machine learning
+python-rdkit #- Collection of cheminformatics and machine-learning software
+python-sklearn #- Python modules for machine learning and data mining
+rdkit-data #- Collection of cheminformatics and machine-learning software (data files)
+rdkit-doc #- Collection of cheminformatics and machine-learning software (documentation)
+science-machine-learning #- Debian Science Machine Learning packages
+vowpal-wabbit #- fast and scalable online machine learning algorithm
+weka #- Machine learning algorithms for data mining tasks
+weka-doc #- Machine learning algorithms for data mining tasks
