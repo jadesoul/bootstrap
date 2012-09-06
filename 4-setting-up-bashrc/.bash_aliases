@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# exports
+# exports, please overwritten them in your .bashrc
 export GIT_ROOT=~/git-projects
 export SVN_ROOT=~/svn-projects
 export EDUSNS_SWIFT=~/svn-projects/edusns_proj/edusns_swift
-
+export CHROME_DATA_DIR=/home/jadesoul/.config/google-chrome
 
 # common utils
 alias ll='ls -alF'
@@ -32,14 +32,14 @@ extract () {
 		*.tar.gz)		tar xvzf $1 && cd $(basename "$1" .tar.gz) ;;
 		*.tar.xz)		tar Jxvf $1 && cd $(basename "$1" .tar.xz) ;;
 		*.bz2)		bunzip2 $1 && cd $(basename "$1" /bz2) ;;
-		*.rar)			unrar x $1 && cd $(basename "$1" .rar) ;;
-		*.gz)			gunzip $1 && cd $(basename "$1" .gz) ;;
-		*.tar)			tar xvf $1 && cd $(basename "$1" .tar) ;;
+		*.rar)		unrar x $1 && cd $(basename "$1" .rar) ;;
+		*.gz)		gunzip $1 && cd $(basename "$1" .gz) ;;
+		*.tar)		tar xvf $1 && cd $(basename "$1" .tar) ;;
 		*.tbz2)		tar xvjf $1 && cd $(basename "$1" .tbz2) ;;
 		*.tgz)		tar xvzf $1 && cd $(basename "$1" .tgz) ;;
 		*.zip)		unzip $1 && cd $(basename "$1" .zip) ;;
 		*.Z)			uncompress $1 && cd $(basename "$1" .Z) ;;
-		*.7z)			7z x $1 && cd $(basename "$1" .7z) ;;
+		*.7z)		7z x $1 && cd $(basename "$1" .7z) ;;
 		*)			echo "don't know how to extract '$1'..." ;;
 		esac
 	else
@@ -160,7 +160,6 @@ testblackwidowlocal () {
 }
 
 # for work
-alias sqlite3=/home/zd/software/sqlite/sqlite-autoconf-3071300/sqlite3
 alias govs2='ssh root@zdvs2'
 
 alias goswift='cd $EDUSNS_SWIFT'
@@ -182,3 +181,31 @@ alias showtimewait='ng 9090'
 grepserverlog () {
 	grep -n5 "$1" $EDUSNS_SWIFT/server-v3.log
 }
+
+alias edp='efilesys deploy'
+alias es='edp; efilesys start server'
+alias ec='efilesys start client'
+alias eu='efilesys start uploader'
+
+alias gouucampusfs='ssh -p 20202 fs.uucampus.com'
+
+scptoedusns0 () {
+	if [ $# -lt 2 ]; then
+		echo 'need at least 2 arguments'
+		return 
+	fi
+	args=$1
+	shift
+	while [ $# -ne 1 ]; do
+		args="$args $1"
+		shift
+	done
+	pth=$1
+	cmd="scp -P 20202 $args root@edusns0:$pth"
+	echo $cmd
+	$cmd
+}
+
+alias google-chrome="google-chrome --user-data-dir=\"$CHROME_DATA_DIR\" &"
+
+
