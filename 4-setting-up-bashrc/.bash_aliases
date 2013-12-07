@@ -1,27 +1,18 @@
 #!/bin/bash
 
-# exports, please overwritten them in your .bashrc
-export GIT_ROOT=~/git-projects
-export SVN_ROOT=~/svn-projects
-export EDUSNS_SWIFT=~/svn-projects/edusns_proj/edusns_swift
-export CHROME_DATA_DIR=/home/jadesoul/.config/google-chrome
-
 # common utils
-alias ll='ls -alF'
+alias ll='ls -ahlF'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -aCFl'
 
 alias q='exit'
 alias p='cd ..'
 alias c='clear'
 alias b='cd -'
-alias l=ll
 alias sl=ls
 
-alias pg='ps aux | grep '
+alias pg='ps -AfH | grep '
 alias netspeed='sudo iptraf -g'
-
-alias jgrep="grep -rn5 --include='*.py' --exclude='*.log' --exclude-dir='swift'"
 alias ng='netstat -anp | grep'
 
 # tools for extraction
@@ -50,162 +41,46 @@ extract () {
 # tools for apt get
 alias apts='sudo apt-cache search'
 alias apti='sudo apt-get install'
+alias aptr='sudo apt-get remove'
 
-# tools for python
-installpythonpackage () {
-	python setup.py build
-	sudo python setup.py install
-}
+alias py='ipython -i'
+#----------------------------------------------------------------------------------
 
-# tools for git
-alias gogitroot="cd $GIT_ROOT"
+export PATH=~/bin:$PATH
+export LD_LIBRARY_PATH=~/lib:$LD_LIBRARY_PATH
+export INCLUDE_PATH=~/include:$INCLUDE_PATH
+export LANG="zh_CN.UTF-8"
+export LC_COLLATE="C"
 
-gitget () {
-	git clone git@github.com:jadesoul/$1.git
-}
 
-gogitproj () { 
-	cd $GIT_ROOT/$1
-}
+alias gl='git log'
+alias gb='git branch -av'
+alias gs='git show'
+alias gst='git status'
+alias gsb='git show-branch -a'
+alias gr='git remote -v'
+alias gd='git diff'
+alias ga='git add'
+alias gm='git merge'
+alias gmd='gm desktop'
 
-gitpull () {
-	gogitproj $1
-	git pull
-	b
-}
-
-ga () {
-	msg="$1"
+gi () {
+	echo '-------------------diff begin----------------------'
+	git diff --exit-code --color=auto
+	echo '--------------------diff end-----------------------'
+	echo please input commit message:
+	read msg
 	if [ ! $msg ]; then
-		msg='aha, no message'
+		echo abort for no message
+		return
 	fi
-	git commit -a -m $msg
+	echo git commit -a -m "'$msg'"
+	git commit -a -m "$msg"
 }
 
-gitpush () {
-	gogitproj $1
-	ga
-	git push
-	b
-}
-
-installpythonpackagefromgit () {
-	gogitproj $1
-	installpythonpackage
-	b
-}
-
-updateinstallpythonpackagefromgit () {
-	PWD=`pwd`
-	gogitroot
-	if [ -d $1 ]; then
-		gitpull $1
-	else
-		gitget $1
-	fi
-	installpythonpackagefromgit $1
-	cd $PWD
-} 
-
-backupbashrc () {
-	cp ~/.bash_aliases $GIT_ROOT/bootstrap/4-setting-up-bashrc
-}
-
-alias getbootstrap='gitget bootstrap'
-alias gobootstrap='gogitproj bootstrap'
-alias pullbootstrap='gitpull bootstrap'
-alias pushbootstrap='gitpush bootstrap'
-
-alias getlibjade='gitget libjade'
-alias golibjade='gogitproj libjade'
-alias pulllibjade='gitpull libjade'
-alias pushlibjade='gitpush libjade'
-alias installlibjade='installpythonpackagefromgit libjade'
-alias updateinstalllibjade='updateinstallpythonpackagefromgit libjade'
-
-alias getblackwidow='gitget blackwidow'
-alias goblackwidow='gogitproj blackwidow'
-alias pullblackwidow='gitpull blackwidow'
-alias pushblackwidow='gitpush blackwidow'
-
-# tools for svn
-alias gosvnroot="cd $SVN_ROOT"
-alias updatesvn='svn up'
-
-gosvnproj () {
-	cd $SVN_ROOT/$1
-}
-
-installpythonpackagefromsvn () {
-	gosvnproj $1
-	installpythonpackage
-	b
-}
-
-updateinstallpythonpackagefromsvn () {
-	gosvnproj $1
-	updatesvn
-	installpythonpackage
-	b
-}
-
-alias goblackwidowlocal='gosvnproj black-widow-local'
-alias installblackwidowlocal='installpythonpackagefromsvn black-widow-local'
-alias updateinstallblackwidowlocal='updateinstallpythonpackagefromsvn black-widow-local'
-
-testblackwidowlocal () {
-	goblackwidowlocal
-	cd tests/spiders
-	python test.py
-}
-
-# for work
-alias govs2='ssh root@zdvs2'
-
-alias goswift='cd $EDUSNS_SWIFT'
-alias goswiftdev='cd ${EDUSNS_SWIFT}_dev'
-alias gowork=goswift
-
-alias deployswift='goswift; bash deploy.sh'
-alias updateswift='goswift; bash update.sh'
- 
-alias server='goswift; python start-server.py'
-alias debugserver='goswift; updateswift; server'
-
-alias client='goswift; python start-client.py'
-alias debugclient='goswift; for x in {1..100000}; do client; done'
-
-alias uploader='goswift; python start-swift_upload_server.py'
-alias showtimewait='ng 9090'
-
-grepserverlog () {
-	grep -n5 "$1" $EDUSNS_SWIFT/server-v3.log
-}
-
-alias edp='efilesys deploy'
-alias es='edp; efilesys start server'
-alias ec='efilesys start client'
-alias eu='efilesys start uploader'
-
-alias gouucampusfs='ssh -p 20202 fs.uucampus.com'
-
-scptoedusns0 () {
-	if [ $# -lt 2 ]; then
-		echo 'need at least 2 arguments'
-		return 
-	fi
-	args=$1
-	shift
-	while [ $# -ne 1 ]; do
-		args="$args $1"
-		shift
-	done
-	pth=$1
-	cmd="scp -P 20202 $args root@edusns0:$pth"
-	echo $cmd
-	$cmd
-}
-
-alias google-chrome="google-chrome --user-data-dir=\"$CHROME_DATA_DIR\" &"
+alias ng='netstat -anp | grep '
+alias gbk2utf='iconv -f gbk -t utf8'
+alias utf2gbk='iconv -f utf8 -t gbk'
 
 
+alias fixqx='find . -type f -exec chmod 644 {} \; ; find . -type d -exec chmod 755 {} \;'
