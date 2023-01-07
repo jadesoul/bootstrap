@@ -11,5 +11,7 @@ url=https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
 #url=https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
 
 file=$(basename $url)
-test -f $file || wget $url -O $file
-sh $file -b -f -u -p $HOME/tools/miniconda3
+test -f $file || wget $url -O $file || curl -o $file $url
+prefix=$HOME/tools/miniconda3
+sh $file -b -f -u -p $prefix
+$prefix/bin/conda init
